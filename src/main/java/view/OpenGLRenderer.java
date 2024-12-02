@@ -88,7 +88,7 @@ public class OpenGLRenderer {
 
 
         //enemy2
-        enemyJet3 = new Jet(300f,-300f,0f,0f,0.15f,5,0,true,true,true,true);
+        enemyJet3 = new Jet(400f,-300f,0f,0f,0.15f,5,0,true,true,true,true);
         enemyJet4 = new Jet(600f,1500f,0f,0f,0.15f,5,0,true,true,true,true);
 
         enemyBullet = new Bullet(playerJet.getX(), playerJet.getY(), 10, 20,360, 0.20f);
