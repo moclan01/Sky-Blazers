@@ -94,7 +94,7 @@ public class OpenGLRenderer {
         enemyBullet = new Bullet(playerJet.getX(), playerJet.getY(), 10, 20,360, 0.20f);
 
         enemyJets1 = new ArrayList<Jet>();
-        enemyJets1.add(enemyJet1);
+       enemyJets1.add(enemyJet1);
         enemyJets1.add(enemyJet2);
 
         enemyJets2 = new ArrayList<Jet>();
@@ -255,6 +255,8 @@ public class OpenGLRenderer {
                 batch.sdfShader = sdfShader;
                 batch.font = font;
                 batch.initBatch();
+                GL11.glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Thiết lập màu nền đen
+                GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT); // Xóa màn hình với màu nền đen
                 // Vẽ text "Game over" với nền trong suốt
                 GL11.glEnable(GL11.GL_BLEND);  // Bật chế độ pha trộn
                 GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);  // Chế độ pha trộn alpha (mặc định)
@@ -291,8 +293,8 @@ public class OpenGLRenderer {
                     GL11.glEnable(GL11.GL_BLEND);  // Bật chế độ pha trộn
                     GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);  // Chế độ pha trộn alpha (mặc định)
                     // Vẽ text "Game over"
-                    batch.addText("Game over", 220, 400, 1.2f, 0x00FF00);
-                    batch.addText("Press esc to exit", 150, 310, 1.2f, 0x00FF00);
+                    batch.addText("Game over", 220, 400, 1.2f, 0xFF0000);
+                    batch.addText("Press esc to exit", 150, 310, 1.2f, 0xFF0000);
                     batch.flushBatch();
 
                 if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
